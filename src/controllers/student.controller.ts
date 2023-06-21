@@ -10,6 +10,7 @@ class StudentController {
       const students = await prisma.user.findFirst({
         include: {
           posts: true,
+          Profile: true,
         },
       });
       return res.status(200).json({ msg: "success", data: students });

@@ -5,6 +5,7 @@ import { config } from "dotenv";
 // Routers
 import studentRoute from "./routes/student.route";
 import postRoute from "./routes/post.route";
+import profileRoute from "./routes/profile.route";
 
 // Configuration
 config();
@@ -32,6 +33,7 @@ class App {
   public routers(): void {
     this.app.use("/api/v1/student", studentRoute);
     this.app.use("/api/v1/post", postRoute);
+    this.app.use("/api/v1/profile", profileRoute);
   }
 }
 
