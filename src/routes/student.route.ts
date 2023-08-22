@@ -1,8 +1,9 @@
 import { Router } from "express";
 import studentController from "../controllers/student.controller";
+import IRouter from "../interfaces/router.interface";
 
-class StudentRouter {
-  private route: Router;
+class StudentRouter implements IRouter {
+  public route: Router;
 
   get _route() {
     return this.route;
@@ -13,7 +14,7 @@ class StudentRouter {
     this.router();
   }
 
-  public router() {
+  public router(): void {
     this.route.get("/", studentController.index);
     this.route.post("/create", studentController.create);
   }

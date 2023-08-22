@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
+import IController from "../interfaces/controller.interface";
 
 const prisma = new PrismaClient();
 
-class PostController {
+class PostController implements IController {
   public async create(req: Request, res: Response): Promise<Response> {
     try {
       const { title, description, author_id } = req.body;
